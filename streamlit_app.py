@@ -3,7 +3,35 @@ import numpy as np
 import matplotlib.pyplot as plt
 import wave
 import io
+import streamlit as st
 
+st.markdown("""
+<style>
+[data-testid="stToolbar"] {
+    display: none !important;
+}
+
+[data-testid="stDecoration"] {
+    display: none !important;
+}
+
+[data-testid="stStatusWidget"] {
+    display: none !important;
+}
+
+#MainMenu {
+    visibility: hidden;
+}
+
+footer {
+    visibility: hidden;
+}
+
+header {
+    visibility: hidden;
+}
+</style>
+""", unsafe_allow_html=True)
 st.title("Analyse FFT d'un signal audio")
 
 audio_value = st.audio_input(
