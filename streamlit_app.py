@@ -5,7 +5,56 @@ import wave
 import io
 import streamlit as st
 
+import streamlit as st
 
+st.set_page_config(
+    page_title="Analyse FFT",
+    layout="wide",
+    initial_sidebar_state="collapsed"
+)
+
+st.markdown(
+    """
+    <style>
+    html,
+    body,
+    #root,
+    .stApp,
+    .stApp > div,
+    [data-testid="stAppViewContainer"],
+    [data-testid="stAppViewBlockContainer"],
+    [data-testid="stVerticalBlock"],
+    [data-testid="stHorizontalBlock"],
+    .main,
+    .block-container {
+        border-radius: 0 !important;
+        background-color: #0e1117 !important;
+    }
+
+    iframe {
+        border-radius: 0 !important;
+    }
+
+    .block-container {
+        padding-top: 0rem !important;
+        padding-bottom: 0rem !important;
+        padding-left: 0rem !important;
+        padding-right: 0rem !important;
+    }
+
+    header,
+    footer,
+    #MainMenu,
+    [data-testid="stToolbar"],
+    [data-testid="stDecoration"],
+    [data-testid="stStatusWidget"] {
+        visibility: hidden !important;
+        height: 0 !important;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 st.title("Analyse FFT d'un signal audio")
 
 audio_value = st.audio_input(
